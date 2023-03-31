@@ -1,5 +1,5 @@
 import react from "react";
-
+import Razorpay from "./razorpay";
 import "./Account.css";
 
 const Account = () => {
@@ -9,6 +9,10 @@ const Account = () => {
     // fetch coins from backend
     // set coins in state
   };
+
+  const razorpay = () => {
+    razorpay
+  }
 
   return (
     <div className="account-container">
@@ -25,7 +29,7 @@ const Account = () => {
           <div className="account-balance-amount">{getCoins()} AGC</div>
         </div>
         <div className="buy-withdraw">
-          <button className="add-btn">Buy AGC</button>
+          <button className="add-btn" onClick={razorpay}>Buy AGC</button>
           <button className="withdraw-btn">Withdraw</button>
         </div>
       </div>
