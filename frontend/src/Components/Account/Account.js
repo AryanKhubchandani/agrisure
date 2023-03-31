@@ -25,7 +25,7 @@ const Account = () => {
           <div className="account-balance-amount">{getCoins()} AGC</div>
         </div>
         <div className="buy-withdraw">
-          <button className="add-btn">Add</button>
+          <button className="add-btn">Buy AGC</button>
           <button className="withdraw-btn">Withdraw</button>
         </div>
       </div>

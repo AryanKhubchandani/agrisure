@@ -33,12 +33,17 @@ contract Agrisure is ERC20 {
     
     function setMinimumRainfall(uint256 _minimumRainfall) public {
         require(msg.sender == insurer, "Only insurer can set minimum temperature");
-        _minimumTemperature = _minimumRainfall;
+        minimumRainfall = _minimumRainfall;
     }
     
     function withdrawPremium() public {
         require(msg.sender == insurer, "Only insurer can withdraw premiums");
         payable(msg.sender).transfer(address(this).balance);
+    }
+
+    function buyAGS(uint256 _amount) public payable {
+        require(_amount > 0, "Amount must be greater than zero");
+        _mint(msg.sender, _amount);
     }
     
 }

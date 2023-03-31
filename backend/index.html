@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"
+    ></script>
+  </head>
+  <body>
+    <p>HTML</p>
+    <script>
+      let account;
+      let ac;
+      async function connectMetamask() {
+        if (window.ethereum !== "undefined") {
+          //   await window.ethereum.enable()
+          const accounts = await ethereum.request({
+            method: "eth_requestAccounts",
+          });
+          account = accounts[0];
+          console.log(account);
+          ac = account;
+          console.log(typeof account);
+        }
+        return account;
+      }
+
+      const connectContract = async () => {
+        // await window.ethereum.enable()
+        const ABI =
+        const Address = "0x7AC810c2b7Ef3dE8F2541b3a8e5fa5db85096992";
+        window.web3 = await new Web3(window.ethereum);
+        window.contract = await new window.web3.eth.Contract(ABI, Address);
+        console.log("connected");
+      };
+
+      const buyAgs = async () => {
+        amount = 10000; //input from frontend
+        const data = await window.contract.methods
+          .buyAGS(amount)
+          .send({ from: account });
+        console.log(data);
+      };
+
+      const balance = async () => {
+        const data = await window.contract.methods.balanceOf(account).call();
+        console.log(data);
+      };
+
+      const buyInsurance = async () => {
+        const data = await window.contract.methods
+          .buyInsurance()
+          .send({ from: account });
+        console.log(data);
+      };
+
+      const claimInsurance = async () => {
+        rainfall = 3; // input from frontend , 3rd party API
+        const data = await window.contract.methods
+          .claimInsurance(rainfall)
+          .send({ from: account });
+        console.log(data);
+      };
+
+      const locations = async () => {
+        rainfall=0
+        navigator.geolocation.getCurrentPosition((position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+
+          console.log(`Your location is: ${latitude}, ${longitude}`);
+          const apiKey = "80489def9ea6e2edfc25ff2c03d6e2b6";
+
+          const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+          fetch(apiUrl)
+            .then((response) => response.json())
+            .then((data) => {
+              if(data.list[0].rain == 0){
+                rainfall=6;
+                console.log(rainfall)
+                return rainfall
+              }
+              // console.log(data.list[0].rain)
+              return data.list[0].rain
+            })
+            .catch((error) => {
+
+              console.error(`Error: ${error}`);
+              return 0
+            });
+        });
+      };
+    </script>
+    <button onclick="connectMetamask()">Connect</button>
+    <button onclick="connectContract()">contract</button>
+    <button onclick="buyAgs()">buy</button>
+    <button onclick="balance()">balance</button>
+    <button onclick="buyInsurance()">Buy Insurance</button>
+    <button onclick="claimInsurance()">Claim Insurance</button>
+    <button onclick="locations()">Location</button>
+  </body>
+</html>
