@@ -14,6 +14,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
+        <div className="mb-24" />
         <Routes>
           <Route path="/" element={<Landing />} exact />
           <Route path="/signup" element={<Signup />} exact />
