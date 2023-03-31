@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -6,18 +7,18 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <div className="nav-container">
-        <a className="home" href="/">
+        <Link className="home" to="/">
           Home
-        </a>
-        <a className="account" href="/account">
+        </Link>
+        <Link className="account" to="/account">
           Account
-        </a>
-        <a className="package" href="/package">
+        </Link>
+        <Link className="package" to="/package">
           Package
-        </a>
-        <a className="profile" href="/profile">
+        </Link>
+        <Link className="profile" to="/profile">
           Profile
-        </a>
+        </Link>
       </div>
     </nav>
   );
