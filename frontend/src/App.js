@@ -6,6 +6,7 @@ import Login from "./Components/Login/Login";
 import Profile from "./Components/Profile/Profile";
 import Form from "./Components/Form/Form";
 import Account from "./Components/Account/Account";
+import Package from "./Components/Package/Package";
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
           <Route path="/" element={<Landing />} exact />
           <Route path="/signup" element={<Signup />} exact />
           <Route path="/login" element={<Login />} exact />
-          <Route path="/profile" element={<Profile />} exact />
           <Route path="/form" element={<Form />} exact />
-          <Route path="/acount" element={<Account />} exact />
+          <Route path="/account" element={<Account />} exact />
+          <Route path="/package" element={<Package />} exact />
+          <Route path="/profile" element={<Profile />} exact />
         </Routes>
       </Router>
     </div>
