@@ -1,0 +1,24 @@
+nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  margin: 0rem auto;
+  color: white;
+  background-color: #266937;
+
+  /* -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in; */
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.625rem 16rem;
+}
