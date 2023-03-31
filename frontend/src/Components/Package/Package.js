@@ -30,35 +30,36 @@ const Package = () => {
 
   return (
     <div className="main-package-container">
-      {hasPackage ? (
+      {!hasPackage ? (
         <div className="package-container">
-          <div className="package-title">Insurance Package</div>
+          <div className="package-title">Insurance Packages</div>
           <div className="packages">
             <Card
               tier="Bronze"
-              price="Rs. 10000"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nisl eget ultricies tincidunt, nisl nisl aliquam"
+              price="5,000 AGC - 10,000 AGC per annum"
+              content="This category offers the most basic level of coverage, such as protection against a single risk, and access to limited decision support tools. The package cost for this category could range from 5,000 AGC - 10,000 AGC per year, or 416 AGC - 833 AGC per month approximately."
               image=""
               link={buyPackage}
             />
             <Card
               tier="Silver"
-              price="Rs. 20000"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nisl eget ultricies tincidunt, nisl nisl aliquam"
+              price="10,000 AGC - 25,000 AGC per annum"
+              content="This category could offer basic coverage against some common risks, such as drought and flood, and access to some basic decision support tools. The package cost for this category could range from 10,000 AGC - 25,000 AGC per year, or 833 AGC - 2,083 AGC per month approximately.
+              "
               image=""
               link={buyPackage}
             />
             <Card
               tier="Gold"
-              price="Rs. 30000"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nisl eget ultricies tincidunt, nisl nisl aliquam"
+              price="25,000 AGC - 40,000 AGC per annum"
+              content="This category could offer a slightly lower level of coverage than platinum, but still provide comprehensive protection against key risks and access to some advanced tools and services. The package cost for this category could range from 25,000 AGC - 40,000 AGC per year, or 2,083 AGC - 3,333 AGC per month approximately."
               image=""
               link={buyPackage}
             />
             <Card
               tier="Platinum"
-              price="Rs. 40000"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nisl eget ultricies tincidunt, nisl nisl aliquam"
+              price="40,000 AGC - 60,000 AGC per annum"
+              content="This category could offer the highest level of coverage and features, including protection against multiple weather events, pests, and diseases, as well as access to advanced analytics and decision support tools. The package cost for this category could range from 40,000 AGC - 60,000 AGC per year, or 3,333 AGC - 5,000 AGC per month approximately."
               image=""
               link={buyPackage}
             />
